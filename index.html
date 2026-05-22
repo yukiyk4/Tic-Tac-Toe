@@ -3,29 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe</title>
+    <title>Arcade Hub</title>
     <link rel="stylesheet" href="design.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>Tic-Tac-Toe</h1>
-        <div class="status">Player X's turn</div>
 
-        <div class="board">
-            <div class="cell" data-index="0"></div>
-            <div class="cell" data-index="1"></div>
-            <div class="cell" data-index="2"></div>
-            <div class="cell" data-index="3"></div>
-            <div class="cell" data-index="4"></div>
-            <div class="cell" data-index="5"></div>
-            <div class="cell" data-index="6"></div>
-            <div class="cell" data-index="7"></div>
-            <div class="cell" data-index="8"></div>
-        </div>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">ArcadeHub</div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item active" data-target="home-page">Home</a></li>
+            <li><a href="#" class="nav-item" data-target="game-page">Tic-Tac-Toe</a></li>
+        </ul>
+    </nav>
 
-        <button class="reset-btn">Restart Game</button>
-    </div>
+    <!-- Main Content Area -->
+    <main class="content-container">
 
-    <script src="structure.js"></script>
+        <!-- Home Page Section -->
+        <section id="home-page" class="page-section active">
+            <h1>Welcome to Arcade Hub!</h1>
+            <p>Click on the **Tic-Tac-Toe** link in the navigation bar above to start playing.</p>
+        </section>
+
+        <!-- Game Page Section -->
+        <section id="game-page" class="page-section">
+            <div class="game-container">
+                <h1>Tic-Tac-Toe</h1>
+                <div class="status">Player X's turn</div>
+
+                <div class="board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+
+                <button class="reset-btn">Restart Game</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
