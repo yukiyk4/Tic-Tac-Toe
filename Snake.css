@@ -1,0 +1,25 @@
+/* Snake Game Layout Styles */
+.game-container {
+    text-align: center;
+}
+
+#snake-score {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Base Canvas Layout */
+#snakeCanvas {
+    display: block;
+    margin: 0 auto 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+    height: auto; /* Maintains clean aspect ratio on mobile viewports */
+}
+
+/* Button override spacing if needed */
+#snake-reset-btn {
+    margin-top: 5px;
+}

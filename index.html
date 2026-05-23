@@ -33,6 +33,12 @@
             <section id="tictactoe-page" class="page-section">
                 <div class="game-container">
                     <h1>Tic-Tac-Toe</h1>
+
+                    <div class="mode-control-container">
+                        <button id="mode-human" class="mode-btn active">vs Human 👥</button>
+                        <button id="mode-bot" class="mode-btn">vs Bot 🤖</button>
+                    </div>
+
                     <div class="status">Player X's turn</div>
 
                     <div class="board">
@@ -56,17 +62,27 @@
                     <h1>Snake Game</h1>
                     <div class="status" id="snake-score">Score: 0</div>
 
-                    <canvas
-                        id="snakeCanvas"
-                        width="400"
-                        height="400"
-                        style="
-                            background-color: #ffffff;
-                            border-radius: 8px;
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-                            display: block;
-                            margin: 0 auto 25px auto;
-                        "></canvas>
+                    <div class="speed-control-container" style="margin-bottom: 15px">
+                        <label for="snakeSpeed" style="font-weight: 600; margin-right: 8px">Speed Level:</label>
+                        <select
+                            id="snakeSpeed"
+                            style="
+                                padding: 6px 12px;
+                                border-radius: 6px;
+                                border: 1px solid var(--nav-link-color);
+                                background-color: var(--card-bg);
+                                color: var(--text-color);
+                                font-weight: 600;
+                                cursor: pointer;
+                            ">
+                            <option value="150">Easy (Slow)</option>
+                            <option value="100" selected>Normal</option>
+                            <option value="70">Hard (Fast)</option>
+                            <option value="45">Insane! 🔥</option>
+                        </select>
+                    </div>
+
+                    <canvas id="snakeCanvas" width="400" height="400"></canvas>
 
                     <button class="reset-btn" id="snake-reset-btn">Restart Game</button>
                 </div>
