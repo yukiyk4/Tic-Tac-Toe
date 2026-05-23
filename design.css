@@ -125,6 +125,14 @@ body {
     display: block; /* Only show the page with the .active class */
 }
 
+.image-container img {
+    border:solid #6840ba;
+    border-radius: 30px;
+    box-shadow: (5px 5px 15px rgba(0, 0, 0, 0, 3));
+    width: 60%;
+    height: auto;
+    margin-top: 25px;
+}
 
 @media (max-width: 600px) {
     .navbar {
