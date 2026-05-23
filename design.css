@@ -1,13 +1,34 @@
+/* Define theme colors using CSS Custom Properties */
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #334e68;
+    --card-bg: #ffffff;
+    --nav-logo-color: #243b53;
+    --nav-link-color: #627d98;
+    --hover-bg: #e1e8ed;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --bg-color: #0b111e;
+    --text-color: #e2e8f0;
+    --card-bg: #151f32;
+    --nav-logo-color: #f8fafc;
+    --nav-link-color: #94a3b8;
+    --hover-bg: #1e293b;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition when toggling */
 }
 
 body {
-    background-color: #f0f4f8;
-    color: #334e68;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,22 +36,50 @@ body {
 
 /* Navbar Container styling */
 .navbar {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: fixed; /* Keeps it locked at the top while scrolling */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;          /* Controls the exact space between text and button */
+    margin-right: auto; /* Pushes the navigation links to the far right */
+}
+
 .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #243b53;
+    color: var(--nav-logo-color);
+
+}
+
+/* Style for the Dark Mode Toggle Button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background-color 0.2s;
+
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--hover-bg);
+    transform: scale(1.1);
 }
 
 .nav-links {
@@ -41,17 +90,16 @@ body {
 
 .nav-item {
     text-decoration: none;
-    color: #627d98;
+    color: var(--nav-link-color);
     font-weight: 600;
     padding: 8px 16px;
     border-radius: 4px;
     transition: all 0.2s ease;
 }
 
-/* Hover and Active styling for links */
 .nav-item:hover, .nav-item.active {
-    background-color: #e1e8ed;
-    color: #243b53;
+    background-color: var(--hover-bg);
+    color: var(--nav-logo-color);
 }
 
 /* Content Container pushes content down so it doesn't hide behind the fixed navbar */
