@@ -3,6 +3,7 @@ import { initGame } from './TicTacToe.js';
 import { initSnakeGame } from './Snake.js';
 import { initTetrisGame } from './Tetris.js';
 import { initMinesweeperGame } from './Minesweeper.js';
+import { init2048 } from './2048.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,4 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initSnakeGame();
     initTetrisGame();
     initMinesweeperGame();
+    init2048();
 });

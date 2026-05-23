@@ -20,6 +20,7 @@
                 <li><a href="#" class="nav-item" data-target="snake-page">Snake</a></li>
                 <li><a href="#" class="nav-item" data-target="tetris-page">Tetris</a></li>
                 <li><a href="#" class="nav-item" data-target="minesweeper-page">Minesweeper</a></li>
+                <li><a href="#" class="nav-item" data-target="game-2048-page">2048</a></li>
             </ul>
         </nav>
 
@@ -122,6 +123,17 @@
                     <div id="minesweeper-board" class="minesweeper-grid"></div>
 
                     <button class="reset-btn" id="minesweeper-reset-btn">Restart Game</button>
+                </div>
+            </section>
+
+            <section id="game-2048-page" class="page-section">
+                <div class="game-2048-container">
+                    <h1>2048 Game</h1>
+                    <div class="score-container">Score: <span id="score">0</span></div>
+                    <div id="grid-2048">
+                        <!-- 16 grid slots created dynamically via JavaScript -->
+                    </div>
+                    <button id="reset-2048-btn">Restart Game</button>
                 </div>
             </section>
         </main>
