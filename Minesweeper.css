@@ -1,0 +1,60 @@
+/* Minesweeper Grid Layout Base */
+.minesweeper-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 34px);
+    grid-template-rows: repeat(9, 34px);
+    gap: 4px;
+    margin: 0 auto 25px auto;
+    justify-content: center;
+    user-select: none; /* Stops text selection highlighting while right-clicking */
+}
+
+/* Base tile properties */
+.mine-tile {
+    background-color: var(--nav-link-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.15s, transform 0.05s;
+}
+
+.mine-tile:hover {
+    filter: brightness(1.1);
+}
+
+.mine-tile:active {
+    transform: scale(0.95);
+}
+
+/* Revealed visual layouts */
+.mine-tile.revealed {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+    box-shadow: none;
+    cursor: default;
+}
+
+.mine-tile.revealed:hover {
+    filter: none;
+}
+
+/* Flag marker state styling */
+.mine-tile.flagged {
+    background-color: #f59e0b !important; /* Vivid Orange flag */
+}
+
+/* Blown up mine backdrop assignment */
+.mine-tile.mine {
+    background-color: #ef4444 !important; /* Vibrant Red */
+}
+
+/* Distinct Classic Numbering Highlights */
+.mine-tile[data-count="1"] { color: #3b82f6; } /* Blue */
+.mine-tile[data-count="2"] { color: #22c55e; } /* Green */
+.mine-tile[data-count="3"] { color: #ef4444; } /* Red */
+.mine-tile[data-count="4"] { color: #6366f1; } /* Dark Blue/Purple */

@@ -1,0 +1,56 @@
+/* Container holding the canvas and sidebar together */
+.tetris-layout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px; /* Gap between the board and the preview box */
+    margin: 0 auto 25px auto;
+    max-width: fit-content;
+}
+
+/* Remove the old centering margin since the wrapper handles it now */
+#tetrisCanvas {
+    display: block;
+    background-color: var(--card-bg);
+    border: 4px solid var(--nav-link-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar panel layout */
+.tetris-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 3px solid var(--nav-link-color);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.preview-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+/* Next Piece Preview Canvas Box */
+#tetrisPreviewCanvas {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+}
+
+/* Dark theme specific style shift for the preview inner box */
+[data-theme="dark"] #tetrisPreviewCanvas {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+#tetris-score {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}

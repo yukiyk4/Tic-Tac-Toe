@@ -30,10 +30,18 @@ export function initSnakeGame() {
         gameInterval = setInterval(update, currentSpeed);
     }
 
+    // HELPER: Added to stop the interval loop cleanly when requested by the observer
+    function stopSnakeLoop() {
+        if (gameInterval) {
+            clearInterval(gameInterval);
+            gameInterval = null;
+        }
+    }
+
     function update() {
         // Stop calculating if the user switched tabs and hid the element
         if (canvas.offsetParent === null) {
-            if (gameInterval) clearInterval(gameInterval);
+            stopSnakeLoop();
             return;
         }
 
@@ -44,7 +52,7 @@ export function initSnakeGame() {
         if (checkGameOver()) {
             isGameActive = false;
             scoreElement.textContent = `Game Over! Final Score: ${score} 😵`;
-            if (gameInterval) clearInterval(gameInterval);
+            stopSnakeLoop();
             return;
         }
 
@@ -199,6 +207,8 @@ export function initSnakeGame() {
         const goingRight = dx === 1;
         const goingLeft = dx === -1;
 
+        if (canvas.offsetParent === null) return; // Block input tracking if hidden
+
         // Prevent space and arrow keys from layout jumping/scrolling the window
         if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(keyPressed)) {
             e.preventDefault();
@@ -221,8 +231,7 @@ export function initSnakeGame() {
         startGame();
     }
 
-    // --- CRUCIAL CLEANUP LOGIC FOR MODULAR HUB ROUTING ---
-    // Remove previous listeners if they exist to prevent duplication stack
+    // --- CLEANUP LOGIC FOR MODULAR HUB ROUTING ---
     if (globalKeyDownHandler) {
         window.removeEventListener("keydown", globalKeyDownHandler);
     }
@@ -230,19 +239,31 @@ export function initSnakeGame() {
         speedSelect.removeEventListener("change", globalSpeedChangeHandler);
     }
 
-    // Save current functional signatures to global scope reference
     globalKeyDownHandler = changeDirection;
     globalSpeedChangeHandler = () => {
         if (isGameActive) startGame();
     };
 
-    // Safely attach current unique session routes
     window.addEventListener("keydown", globalKeyDownHandler);
     speedSelect.addEventListener("change", globalSpeedChangeHandler);
 
-    // Simple reset setup
+    // --- TAB WATCHER INTERSECTION OBSERVER ---
+    const snakeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                stopSnakeLoop(); // Freeze snake loop instantly when leaving tab
+            }
+        });
+    }, { threshold: 0 });
+
+    const snakeSection = document.getElementById("snake-page");
+    if (snakeSection) {
+        snakeObserver.observe(snakeSection);
+    }
+
+    // Button Reset Setup
     resetBtn.replaceWith(resetBtn.cloneNode(true));
     document.getElementById("snake-reset-btn").addEventListener("click", resetGame);
 
     startGame();
-}
+} // MAIN CLOSING BRACKET REMOVED FROM MIDDLE AND FIXED DOWN HERE!

@@ -18,6 +18,8 @@
                 <li><a href="#" class="nav-item active" data-target="home-page">Home</a></li>
                 <li><a href="#" class="nav-item" data-target="tictactoe-page">Tic-Tac-Toe</a></li>
                 <li><a href="#" class="nav-item" data-target="snake-page">Snake</a></li>
+                <li><a href="#" class="nav-item" data-target="tetris-page">Tetris</a></li>
+                <li><a href="#" class="nav-item" data-target="minesweeper-page">Minesweeper</a></li>
             </ul>
         </nav>
 
@@ -85,6 +87,35 @@
                     <canvas id="snakeCanvas" width="400" height="400"></canvas>
 
                     <button class="reset-btn" id="snake-reset-btn">Restart Game</button>
+                </div>
+            </section>
+
+            <section id="tetris-page" class="page-section">
+                <div class="game-container">
+                    <h1>Tetris</h1>
+                    <div class="status" id="tetris-score">Score: 0</div>
+
+                    <div class="tetris-layout-wrapper">
+                        <canvas id="tetrisCanvas" width="240" height="480"></canvas>
+
+                        <div class="tetris-sidebar">
+                            <div class="preview-title">Next</div>
+                            <canvas id="tetrisPreviewCanvas" width="96" height="96"></canvas>
+                        </div>
+                    </div>
+
+                    <button class="reset-btn" id="tetris-reset-btn">Start Game</button>
+                </div>
+            </section>
+
+            <section id="minesweeper-page" class="page-section">
+                <div class="game-container">
+                    <h1>Minesweeper</h1>
+                    <div class="status" id="minesweeper-status">Mines Left: 10</div>
+
+                    <div id="minesweeper-board" class="minesweeper-grid"></div>
+
+                    <button class="reset-btn" id="minesweeper-reset-btn">Restart Game</button>
                 </div>
             </section>
         </main>
