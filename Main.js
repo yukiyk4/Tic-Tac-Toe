@@ -5,6 +5,8 @@ import { initTetrisGame } from './Tetris.js';
 import { initMinesweeperGame } from './Minesweeper.js';
 import { init2048 } from './2048.js';
 import { initBlackjack } from './Blackjack.js';
+import { initPoker } from './Poker.js';
+import { initWordle } from './Wordle.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,4 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMinesweeperGame();
     init2048();
     initBlackjack();
+    initPoker();
+    initWordle();
 });

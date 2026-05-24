@@ -1,0 +1,217 @@
+/* ==========================================
+   POKER CANVASES & WRAPPERS
+   ========================================== */
+.poker-container {
+    width: 100vw; /* Breaks out of parent constraints to fill view width */
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.poker-status-bar {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.poker-info-box {
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 2px solid var(--nav-link-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* MASSIVE CASINO TABLE COMPONENT */
+.poker-table {
+    background-color: var(--card-bg);
+    border: 5px solid var(--nav-link-color);
+    border-radius: 80px; /* Expands the rounded geometry outwards */
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    margin: 0 auto 25px auto;
+    width: 100%;
+    min-width: 820px; /* Forces table layout to maintain its wide aspect ratio */
+    min-height: 520px; /* Gives plenty of vertical separation */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* WIDENED SEATS TO CHILL CARDS APART */
+.poker-seat {
+    background-color: var(--hover-bg);
+    border: 2px solid var(--nav-link-color);
+    border-radius: 14px;
+    padding: 12px;
+    width: 220px; /* Widened from 190px to prevent card overlaps */
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+}
+
+/* Absolute Positions With Comfortable Gaps */
+#seat-bot1 {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+#seat-bot2 {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+
+.player-seat {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px; /* Extra spacious for your private pocket cards */
+}
+
+.player-label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.chip-count {
+    font-size: 1rem;
+    color: var(--nav-link-color);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+/* EXTRA WIDE COMMUNITY PILE (CENTER AREA) */
+.community-card-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 440px; /* Widen section completely to hold all 5 community cards */
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.table-round-title {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--nav-link-color);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* Action Bubbles */
+.action-bubble {
+    background-color: var(--nav-link-color);
+    color: var(--card-bg);
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+/* CARDS WRAPPER PIPELINES */
+.poker-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Added spacing between items */
+    min-height: 95px;
+    margin-top: 6px;
+    align-items: center;
+}
+
+/* LARGE RECOGNIZABLE CARDS DESIGN */
+.pk-card {
+    width: 65px;  /* Scaled up from 56px */
+    height: 92px; /* Scaled up from 78px */
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 1.2rem; /* Big, clear typography */
+    position: relative;
+    flex-shrink: 0; /* Anti-compression shield lock */
+    animation: cardSprout 0.2s ease-out forwards;
+}
+
+/* Hand Pocket Overlap Angle Offset */
+.poker-seat .pk-card + .pk-card {
+    margin-left: -12px; /* Creates an overlapping fan look without crushing the numbers */
+}
+
+.pk-card.card-red {
+    color: #e53e3e;
+}
+
+.pk-card.card-back {
+    background: linear-gradient(135deg, #e53e3e 25%, #b7791f 25%, #b7791f 50%, #e53e3e 50%, #e53e3e 75%, #b7791f 75%);
+    background-size: 12px 12px;
+    border: 2px solid white;
+    color: transparent !important;
+}
+
+@keyframes cardSprout {
+    0% { transform: scale(0.7) translateY(12px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.poker-announcement {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 25px 0;
+    min-height: 35px;
+}
+
+/* Controls interface tray */
+.poker-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.poker-btn {
+    background-color: var(--nav-link-color);
+    color: var(--card-bg);
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.poker-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+.poker-btn:active { transform: scale(0.97); }
+
+.gold-btn { background-color: #d69e2e; color: white; }
+.action-fold { background-color: #e53e3e; color: white; }
+.action-check { background-color: #3182ce; color: white; }
+.action-raise { background-color: #38a169; color: white; }

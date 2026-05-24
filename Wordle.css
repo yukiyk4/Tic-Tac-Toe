@@ -1,0 +1,169 @@
+/* ==========================================
+   WORDLE GAME HUB INTERFACE
+   ========================================== */
+.wordle-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+/* 6 Rows x 5 Columns Layout Grid */
+.wordle-grid {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 6px;
+    width: 310px;
+    height: 380px;
+    margin: 10px 0;
+}
+
+.wordle-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+/* Elegant Adaptive Letter Tiles */
+.wordle-tile {
+    border: 2px solid var(--nav-link-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Active Character Typing Pop Animation */
+.wordle-tile.pop {
+    animation: tilePop 0.1s ease-in-out;
+    border-color: var(--text-color);
+}
+
+/* Verified Evaluated Status Colors */
+.wordle-tile.correct {
+    background-color: #538d4e !important; /* Premium Green */
+    border-color: #538d4e !important;
+    color: #ffffff !important;
+}
+
+.wordle-tile.present {
+    background-color: #b59f3b !important; /* Premium Casino Yellow */
+    border-color: #b59f3b !important;
+    color: #ffffff !important;
+}
+
+.wordle-tile.absent {
+    background-color: #3a3a3c !important; /* Premium Charcoal Gray */
+    border-color: #3a3a3c !important;
+    color: #ffffff !important;
+}
+
+/* On-Screen Virtual Input Keyboard Panel */
+.wordle-keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 480px;
+    margin-top: 10px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.key-btn {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 14px 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 1;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s, opacity 0.1s;
+}
+
+.key-btn:hover {
+    opacity: 0.9;
+}
+
+.key-btn:active {
+    transform: scale(0.96);
+}
+
+.key-btn.wide-key {
+    flex: 1.6;
+    font-size: 0.8rem;
+}
+
+/* Virtual Key Status Colors */
+.key-btn.correct { background-color: #538d4e !important; color: white !important; }
+.key-btn.present { background-color: #b59f3b !important; color: white !important; }
+.key-btn.absent  { background-color: #3a3a3c !important; color: white !important; opacity: 0.6; }
+
+.wordle-announcement {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    min-height: 28px;
+    letter-spacing: 0.5px;
+}
+
+/* Bottom Interface Control Panel */
+.wordle-control-panel {
+    margin-top: 10px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.wordle-btn {
+    background-color: var(--nav-link-color);
+    color: var(--card-bg);
+    border: none;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.wordle-btn:hover {
+    opacity: 0.95;
+}
+
+.wordle-btn:active {
+    transform: scale(0.97);
+}
+
+/* Keyframe Pop Entry */
+@keyframes tilePop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}

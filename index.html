@@ -22,6 +22,8 @@
                 <li><a href="#" class="nav-item" data-target="minesweeper-page">Minesweeper</a></li>
                 <li><a href="#" class="nav-item" data-target="game-2048-page">2048</a></li>
                 <li><a href="#" class="nav-item" data-target="blackjack-page">Blackjack</a></li>
+                <li><a href="#" class="nav-item" data-target="poker-page">Poker</a></li>
+                <li><a href="#" class="nav-item" data-target="wordle-page">Wordle</a></li>
             </ul>
         </nav>
 
@@ -172,6 +174,78 @@
                             <button id="bj-stand-btn" class="bj-btn action-stand">Stand</button>
                         </div>
                         <button id="bj-next-btn" class="bj-btn" style="display: none">Next Round</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="poker-page" class="page-section">
+                <div class="poker-container">
+                    <h1>Texas Hold'em Poker</h1>
+
+                    <div class="poker-status-bar">
+                        <div class="poker-info-box">Pot: $<span id="poker-pot">0</span></div>
+                        <div class="poker-info-box">Your Chip Stack: $<span id="poker-wallet">1000</span></div>
+                    </div>
+
+                    <div class="poker-table">
+                        <div class="poker-seat bot-seat" id="seat-bot1">
+                            <span class="player-label">Bot 1 (Aggressive)</span>
+                            <div class="chip-count">$<span id="bot1-chips">1000</span></div>
+                            <div id="bot1-cards" class="poker-cards-wrapper"></div>
+                            <div id="bot1-bubble" class="action-bubble">Waiting...</div>
+                        </div>
+
+                        <div class="poker-seat bot-seat" id="seat-bot2">
+                            <span class="player-label">Bot 2 (Conservative)</span>
+                            <div class="chip-count">$<span id="bot2-chips">1000</span></div>
+                            <div id="bot2-cards" class="poker-cards-wrapper"></div>
+                            <div id="bot2-bubble" class="action-bubble">Waiting...</div>
+                        </div>
+
+                        <div class="community-card-section">
+                            <div class="table-round-title" id="poker-round-name">Pre-Flop</div>
+                            <div id="community-cards" class="poker-cards-wrapper"></div>
+                        </div>
+
+                        <div class="poker-seat player-seat">
+                            <span class="player-label">You</span>
+                            <div id="player-poker-cards" class="poker-cards-wrapper"></div>
+                            <div id="player-bubble" class="action-bubble">Your Turn</div>
+                        </div>
+                    </div>
+
+                    <div id="poker-msg" class="poker-announcement">Click Deal to start a new hand!</div>
+
+                    <div class="poker-controls">
+                        <div id="poker-pregame-ctrls">
+                            <button id="poker-deal-btn" class="poker-btn gold-btn">Deal Hand ($20 Ante)</button>
+                        </div>
+                        <div id="poker-action-ctrls" style="display: none">
+                            <button id="poker-fold-btn" class="poker-btn action-fold">Fold</button>
+                            <button id="poker-check-btn" class="poker-btn action-check">Check / Call</button>
+                            <button id="poker-raise-btn" class="poker-btn action-raise">Raise $50</button>
+                        </div>
+                        <button id="poker-next-btn" class="poker-btn" style="display: none">Next Round</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="wordle-page" class="page-section">
+                <div class="wordle-container">
+                    <h1>Wordle</h1>
+
+                    <div id="wordle-grid" class="wordle-grid"></div>
+
+                    <div id="wordle-msg" class="wordle-announcement">Type a 5-letter word to begin!</div>
+
+                    <div class="wordle-keyboard">
+                        <div class="keyboard-row" id="kb-row-1"></div>
+                        <div class="keyboard-row" id="kb-row-2"></div>
+                        <div class="keyboard-row" id="kb-row-3"></div>
+                    </div>
+
+                    <div class="wordle-control-panel">
+                        <button id="wordle-reset-btn" class="wordle-btn">Restart Game</button>
                     </div>
                 </div>
             </section>
