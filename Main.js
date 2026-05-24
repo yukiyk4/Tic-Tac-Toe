@@ -4,6 +4,7 @@ import { initSnakeGame } from './Snake.js';
 import { initTetrisGame } from './Tetris.js';
 import { initMinesweeperGame } from './Minesweeper.js';
 import { init2048 } from './2048.js';
+import { initBlackjack } from './Blackjack.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initTetrisGame();
     initMinesweeperGame();
     init2048();
+    initBlackjack();
 });

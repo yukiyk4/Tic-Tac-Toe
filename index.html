@@ -21,6 +21,7 @@
                 <li><a href="#" class="nav-item" data-target="tetris-page">Tetris</a></li>
                 <li><a href="#" class="nav-item" data-target="minesweeper-page">Minesweeper</a></li>
                 <li><a href="#" class="nav-item" data-target="game-2048-page">2048</a></li>
+                <li><a href="#" class="nav-item" data-target="blackjack-page">Blackjack</a></li>
             </ul>
         </nav>
 
@@ -30,8 +31,8 @@
             <section id="home-page" class="page-section active">
                 <h1>Welcome to Arcade Hub!</h1>
                 <p>
-                    All games is maked with Ai assistance, if you why use a Ai because I don't understand Java Script
-                    and advance css yet
+                    All games is maked with Ai assistance, if you ask why i'm using Ai. it is because I don't understand
+                    Java Script and advance css yet
                 </p>
                 <div class="image-container">
                     <img src="https://i.ytimg.com/vi/nYSmBNeK-qU/maxresdefault.jpg" alt="SW meme" />
@@ -134,6 +135,44 @@
                         <!-- 16 grid slots created dynamically via JavaScript -->
                     </div>
                     <button id="reset-2048-btn">Restart Game</button>
+                </div>
+            </section>
+
+            <section id="blackjack-page" class="page-section">
+                <div class="blackjack-container">
+                    <h1>Blackjack</h1>
+
+                    <div class="game-status-bar">
+                        <div class="bj-score-box">Wallet: $<span id="bj-wallet">1000</span></div>
+                        <div class="bj-score-box">Current Bet: $<span id="bj-current-bet">0</span></div>
+                    </div>
+
+                    <div class="table-area">
+                        <div class="hand-section">
+                            <h3>Dealer Hand (Bot) <span id="dealer-score-info" class="hand-score"></span></h3>
+                            <div id="dealer-cards" class="cards-wrapper"></div>
+                        </div>
+
+                        <div class="hand-section">
+                            <h3>Your Hand <span id="player-score-info" class="hand-score"></span></h3>
+                            <div id="player-cards" class="cards-wrapper"></div>
+                        </div>
+                    </div>
+
+                    <div id="blackjack-msg" class="game-announcement">Choose a bet to start playing!</div>
+
+                    <div class="blackjack-controls">
+                        <div id="betting-controls">
+                            <button class="bj-btn bet-btn" data-amount="10">Bet $10</button>
+                            <button class="bj-btn bet-btn" data-amount="50">Bet $50</button>
+                            <button class="bj-btn bet-btn" data-amount="100">Bet $100</button>
+                        </div>
+                        <div id="action-controls" style="display: none">
+                            <button id="bj-hit-btn" class="bj-btn action-hit">Hit</button>
+                            <button id="bj-stand-btn" class="bj-btn action-stand">Stand</button>
+                        </div>
+                        <button id="bj-next-btn" class="bj-btn" style="display: none">Next Round</button>
+                    </div>
                 </div>
             </section>
         </main>
