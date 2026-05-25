@@ -4,11 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Arcade Hub</title>
-        <!-- Your main stylesheet -->
         <link rel="stylesheet" href="Main.css" />
     </head>
     <body>
-        <!-- Top Navigation Bar -->
         <nav class="navbar">
             <div class="nav-brand">
                 <div class="nav-logo">ArcadeHub</div>
@@ -37,9 +35,7 @@
             </ul>
         </nav>
 
-        <!-- Main Content Area -->
         <main class="content-container">
-            <!-- Home Page Section -->
             <section id="home-page" class="page-section active">
                 <h1>Welcome to Arcade Hub!</h1>
                 <p>
@@ -51,7 +47,6 @@
                 </div>
             </section>
 
-            <!-- Game Page Section -->
             <section id="tictactoe-page" class="page-section">
                 <div class="game-container">
                     <h1>Tic-Tac-Toe</h1>
@@ -106,6 +101,16 @@
 
                     <canvas id="snakeCanvas" width="400" height="400"></canvas>
 
+                    <div class="mobile-dpad">
+                        <button class="dpad-btn up" id="snake-up">▲</button>
+                        <div class="dpad-row">
+                            <button class="dpad-btn left" id="snake-left">◀</button>
+                            <div class="dpad-spacer"></div>
+                            <button class="dpad-btn right" id="snake-right">▶</button>
+                        </div>
+                        <button class="dpad-btn down" id="snake-down">▼</button>
+                    </div>
+
                     <button class="reset-btn" id="snake-reset-btn">Restart Game</button>
                 </div>
             </section>
@@ -122,6 +127,15 @@
                             <div class="preview-title">Next</div>
                             <canvas id="tetrisPreviewCanvas" width="96" height="96"></canvas>
                         </div>
+                    </div>
+
+                    <div class="mobile-tetris-controls">
+                        <button class="tetris-btn action-rotate" id="tetris-rotate">🔄 Rotate</button>
+                        <div class="tetris-movement-row">
+                            <button class="tetris-btn" id="tetris-left">◀ Move Left</button>
+                            <button class="tetris-btn" id="tetris-right">Move Right ▶</button>
+                        </div>
+                        <button class="tetris-btn action-drop" id="tetris-down">▼ Soft Drop</button>
                     </div>
 
                     <button class="reset-btn" id="tetris-reset-btn">Start Game</button>
@@ -144,8 +158,18 @@
                     <h1>2048 Game</h1>
                     <div class="score-container">Score: <span id="score">0</span></div>
                     <div id="grid-2048">
-                        <!-- 16 grid slots created dynamically via JavaScript -->
+                        </div>
+
+                    <div class="mobile-dpad">
+                        <button class="dpad-btn up" id="m2048-up">▲</button>
+                        <div class="dpad-row">
+                            <button class="dpad-btn left" id="m2048-left">◀</button>
+                            <div class="dpad-spacer"></div>
+                            <button class="dpad-btn right" id="m2048-right">▶</button>
+                        </div>
+                        <button class="dpad-btn down" id="m2048-down">▼</button>
                     </div>
+
                     <button id="reset-2048-btn">Restart Game</button>
                 </div>
             </section>
@@ -283,7 +307,6 @@
             </section>
         </main>
 
-        <!-- CRUCIAL: type="module" allows the use of import statements inside design.js -->
         <script type="module" src="Main.js"></script>
     </body>
 </html>

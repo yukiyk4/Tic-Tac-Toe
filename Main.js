@@ -1,3 +1,6 @@
+/* ==========================================
+   FIXED JAVASCRIPT IMPORTS (CAPITAL GAME FOLDER)
+   ========================================== */
 import { initNavigation } from './design.js';
 import { initGame } from './TicTacToe.js';
 import { initSnakeGame } from './Snake.js';
@@ -9,11 +12,11 @@ import { initPoker } from './Poker.js';
 import { initWordle } from './Wordle.js';
 import { initChatbot } from './Chatbot.js';
 
-
+// Initialize all arcade features when the document is ready
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGame();
-    initSnakeGame();
+    initSnake();
     initTetrisGame();
     initMinesweeperGame();
     init2048();
