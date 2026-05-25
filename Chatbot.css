@@ -1,0 +1,136 @@
+/* ==========================================
+   CHATBOT INTERFACE WRAPPERS
+   ========================================== */
+.chat-container {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    border: 3px solid var(--hover-bg);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.chat-subtitle {
+    font-size: 0.95rem;
+    color: var(--nav-link-color);
+    margin-bottom: 15px;
+}
+
+/* Scrollable message window log viewport */
+.chat-box {
+    height: 380px;
+    overflow-y: auto;
+    border: 2px solid var(--hover-bg);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Chat bubble aesthetics */
+.chat-message {
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 80%;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    word-break: break-word;
+    animation: messageFade 0.2s ease-out forwards;
+}
+
+/* Bot Response styling */
+.bot-msg {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    border: 1px solid var(--hover-bg);
+}
+
+/* User Message: ALWAYS has a distinct dark/colored background with solid WHITE text */
+.user-msg {
+    background-color: #2563eb; /* Stable premium blue that doesn't change color */
+    color: #ffffff !important; /* Force text to stay bright white */
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input layout tray block */
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid var(--hover-bg);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#chat-input:focus {
+    border-color: var(--nav-link-color);
+}
+
+.chat-btn {
+    /* Uses a premium interactive blue that looks beautiful in Light Mode */
+    background-color: #2563eb;
+    color: #ffffff !important; /* Forces the 'Send' text to remain solid white */
+    border: none;
+    padding: 0 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.1s,
+        background-color 0.2s,
+        opacity 0.2s;
+}
+
+.chat-btn:hover {
+    opacity: 0.9;
+}
+.chat-btn:active {
+    transform: scale(0.97);
+}
+
+[data-theme="dark"] .user-msg {
+    background-color: #1e293b; /* Deep slate bubble for dark mode */
+    color: #38bdf8 !important; /* Bright neon blue text for perfect contrast */
+    border: 1px solid #334155;
+}
+
+[data-theme="dark"] .chat-btn {
+    /* Switches to a slightly deeper royal blue to blend beautifully with dark slate themes */
+    background-color: #1d4ed8;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes messageFade {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

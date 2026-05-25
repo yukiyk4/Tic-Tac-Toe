@@ -7,6 +7,7 @@ import { init2048 } from './2048.js';
 import { initBlackjack } from './Blackjack.js';
 import { initPoker } from './Poker.js';
 import { initWordle } from './Wordle.js';
+import { initChatbot } from './Chatbot.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,4 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initBlackjack();
     initPoker();
     initWordle();
+    initChatbot();
 });

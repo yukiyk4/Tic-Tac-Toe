@@ -32,13 +32,25 @@ export function initNavigation() {
         item.addEventListener('click', (e) => {
             e.preventDefault();
 
+            // Clear previous active highlights across links and panel screens
             navItems.forEach(nav => nav.classList.remove('active'));
             pageSections.forEach(section => section.classList.remove('active'));
 
+            // Highlight the clicked link and activate the designated game page container
             item.classList.add('active');
 
             const targetId = item.getAttribute('data-target');
-            document.getElementById(targetId).classList.add('active');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // --- MOBILE DROPDOWN COUPLING AUTO-CLOSE FEATURE ---
+            // Automatically unchecks the hamburger toggle element to pull the menu drawer closed
+            const menuToggler = document.getElementById('menu-toggle');
+            if (menuToggler) {
+                menuToggler.checked = false;
+            }
         });
     });
 }

@@ -14,6 +14,15 @@
                 <div class="nav-logo">ArcadeHub</div>
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
             </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox" />
+
+            <label for="menu-toggle" class="hamburger-menu" aria-label="Open Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+
             <ul class="nav-links">
                 <li><a href="#" class="nav-item active" data-target="home-page">Home</a></li>
                 <li><a href="#" class="nav-item" data-target="tictactoe-page">Tic-Tac-Toe</a></li>
@@ -21,9 +30,9 @@
                 <li><a href="#" class="nav-item" data-target="tetris-page">Tetris</a></li>
                 <li><a href="#" class="nav-item" data-target="minesweeper-page">Minesweeper</a></li>
                 <li><a href="#" class="nav-item" data-target="game-2048-page">2048</a></li>
-                <li><a href="#" class="nav-item" data-target="blackjack-page">Blackjack</a></li>
                 <li><a href="#" class="nav-item" data-target="poker-page">Poker</a></li>
                 <li><a href="#" class="nav-item" data-target="wordle-page">Wordle</a></li>
+                <li><a href="#" class="nav-item" data-target="chatbot-page">AI Chat</a></li>
             </ul>
         </nav>
 
@@ -246,6 +255,28 @@
 
                     <div class="wordle-control-panel">
                         <button id="wordle-reset-btn" class="wordle-btn">Restart Game</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="chatbot-page" class="page-section">
+                <div class="chat-container">
+                    <h1>Arcade AI Companion</h1>
+                    <p class="chat-subtitle">Ask me for tips, game strategies, or just say hello!</p>
+
+                    <div id="chat-box" class="chat-box">
+                        <div class="chat-message bot-msg">
+                            <strong>🤖 ArcadeBot:</strong> Welcome to the Arcade Hub! What are we playing today?
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <input
+                            type="text"
+                            id="chat-input"
+                            placeholder="Ask something (e.g., 'How do I win at Poker?')..."
+                            autocomplete="off" />
+                        <button id="chat-send-btn" class="chat-btn">Send</button>
                     </div>
                 </div>
             </section>
